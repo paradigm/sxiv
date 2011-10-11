@@ -719,3 +719,29 @@ bool img_frame_animate(img_t *img, bool restart) {
 
 	return true;
 }
+
+void img_invert(img_t *img){
+	/* the code here is almost verbatim taken from Julien Danjou's telak. */
+	int i;
+	DATA8 r_table[256];
+	DATA8 g_table[256];
+	DATA8 b_table[256];
+	DATA8 a_table[256];
+
+	Imlib_Color_Modifier color_mod;
+	imlib_context_set_image(img->im);
+	color_mod = imlib_create_color_modifier();
+	imlib_context_set_color_modifier(color_mod);
+	imlib_reset_color_modifier();
+
+	imlib_get_color_modifier_tables(r_table, g_table, b_table, a_table);
+
+	for(i = 0; i <= 255; i++)
+	{
+		r_table[255-i] = i;
+		g_table[255-i] = i;
+		b_table[255-i] = i;
+	}
+
+	imlib_set_color_modifier_tables(r_table, g_table, b_table, a_table);
+}
