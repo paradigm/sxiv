@@ -1,3 +1,12 @@
+paradigm's fork
+---------------
+
+This is just a quick-and-dirty fork of Bert Muennich's sxiv, which will add the ability to invert colors.  I'm mostly just ripping out the relevant code from Julien Danjou's telak.
+
+
+Original README
+---------------
+
 sxiv: Simple (or small or suckless) X Image Viewer
 
 sxiv is an alternative to feh and qiv. Its only dependency besides xlib is
