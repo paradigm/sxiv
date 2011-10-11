@@ -196,6 +196,10 @@ void load_image(int new) {
 
 	win_set_cursor(&win, CURSOR_WATCH);
 
+	if(options->invert_colors){
+		img_invert(&img);
+	}
+
 	img_close(&img, false);
 	while (!img_load(&img, &files[new])) {
 		remove_file(new, false);
