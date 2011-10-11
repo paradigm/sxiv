@@ -71,7 +71,9 @@ void parse_options(int argc, char **argv) {
 	_options.thumb_mode = false;
 	_options.clean_cache = false;
 
-	while ((opt = getopt(argc, argv, "cdFfg:hn:pqrstvZz:")) != -1) {
+	_options.invert_colors = false;
+
+	while ((opt = getopt(argc, argv, "cdFfg:hn:pqrstVvZz:")) != -1) {
 		switch (opt) {
 			case '?':
 				print_usage();
@@ -117,6 +119,9 @@ void parse_options(int argc, char **argv) {
 				break;
 			case 't':
 				_options.thumb_mode = true;
+				break;
+			case 'V':
+				_options.invert_colors = true;
 				break;
 			case 'v':
 				print_version();
