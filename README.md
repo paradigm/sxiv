@@ -1,7 +1,13 @@
 paradigm's fork
 ---------------
 
-This is just a quick-and-dirty fork of Bert Muennich's sxiv, which will add the ability to invert colors.  I'm mostly just ripping out the relevant code from Julien Danjou's telak.
+This is just a quick-and-dirty fork of Bert Muennich's sxiv, which adds the
+ability to invert colors.
+
+The code to invert colors is taken directly from Julien Danjou's telak.
+
+For now it will just invert the colors if launched with the -V flag.
+Eventually I'd like to add the ability to toggle the inverted state.
 
 
 Original README
